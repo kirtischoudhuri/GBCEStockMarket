@@ -2,7 +2,7 @@ package com.gbce.stock.s3Market.model;
 
 import java.util.Date;
 
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.enums.StockType;
 
 public class StockDetails {
@@ -15,7 +15,7 @@ public class StockDetails {
 	private Double price;
 	private Integer quantity;
 	private Date tradeTime;
-	private BuySellIndictor buySellIndictor;
+	private BuySellIndicator buySellIndictor;
 
 
 	public String getStockSymbol() {
@@ -82,11 +82,11 @@ public class StockDetails {
 		this.tradeTime = tradeTime;
 	}
 
-	public BuySellIndictor getBuySellIndictor() {
+	public BuySellIndicator getBuySellIndicator() {
 		return buySellIndictor;
 	}
 
-	public void setBuySellIndictor(BuySellIndictor buySellIndictor) {
+	public void setBuySellIndicator(BuySellIndicator buySellIndictor) {
 		this.buySellIndictor = buySellIndictor;
 	}
 	public StockDetails() {
@@ -101,11 +101,11 @@ public class StockDetails {
 		this.setPrice(price);
 	}
 
-	public StockDetails(Date tradeTime,String symbol, Integer quantity, BuySellIndictor buySellIndictor, Double price) {
+	public StockDetails(Date tradeTime,String symbol, Integer quantity, BuySellIndicator buySellIndictor, Double price) {
 		this.setTradeTime(tradeTime);
 		this.setStockSymbol(symbol);
 		this.setQuantity(quantity);
-		this.setBuySellIndictor(buySellIndictor);
+		this.setBuySellIndicator(buySellIndictor);
 		this.setPrice(price);
 	}
 	

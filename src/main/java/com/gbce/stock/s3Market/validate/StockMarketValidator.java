@@ -2,7 +2,7 @@ package com.gbce.stock.s3Market.validate;
 
 import java.util.Map;
 
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.model.StockDetails;
 
 public class StockMarketValidator {
@@ -16,7 +16,7 @@ public class StockMarketValidator {
 			return (data!=null&&data.trim().length()!=0)?true:false;
 		}else if(validateFor.equals(StockInformation.BUYSELL)){
 			try{
-				BuySellIndictor.valueOf(data.toUpperCase());
+				BuySellIndicator.valueOf(data.toUpperCase());
 				return true;
 			}catch(Exception e){
 				return false;

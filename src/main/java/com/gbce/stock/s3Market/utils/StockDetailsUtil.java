@@ -21,7 +21,7 @@ public class StockDetailsUtil {
 	 * @return HashMap<String, StockDetails>
 	 *
 	 */
-	public static Map<Date, StockDetails> getLast15MinTrades(Calendar now, Map<Date, StockDetails> tradeData) {
+	public static Map<Date, StockDetails> getLastReqMinTrades(Calendar now, Map<Date, StockDetails> tradeData) {
 		Map<Date, StockDetails> last15MinTradeData = new TreeMap<>();
 		now.add(Calendar.MINUTE, -(StockMarketConstant.REQ_PAST_MINUTES));
 		

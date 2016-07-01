@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.model.StockDetails;
 
 public interface StockMarketService {
@@ -38,7 +38,7 @@ public interface StockMarketService {
 	 * @return Map<Date, StockDetails>
 	 *
 	 */
-	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndictor buySellIndictor,Double price);
+	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndicator buySellIndictor,Double price);
 
 	/**
 	 * @author Kirti

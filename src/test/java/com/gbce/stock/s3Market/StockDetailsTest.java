@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.gbce.stock.s3Market.dao.impl.StockMarketDAOImpl;
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.enums.StockType;
 import com.gbce.stock.s3Market.model.StockDetails;
 
@@ -45,9 +45,9 @@ public class StockDetailsTest {
 
 	@Test
 	public void testVWSPrice() {
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"ALE",5,BuySellIndictor.SELL,7.0);
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"POP",6,BuySellIndictor.BUY,6.0);
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"JOE",7,BuySellIndictor.SELL,5.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"ALE",5,BuySellIndicator.SELL,7.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"POP",6,BuySellIndicator.BUY,6.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"JOE",7,BuySellIndicator.SELL,5.0);
 
 		Double vWSPrice = Double.parseDouble(stockMarketDAOImpl.getVWSPrice(Calendar.getInstance()));
 		assertEquals(5.89, vWSPrice, 0.0);
@@ -55,9 +55,9 @@ public class StockDetailsTest {
 	@Test
 	public void testGetASIndex() {
 
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"ALE",5,BuySellIndictor.SELL,7.0);
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"POP",6,BuySellIndictor.BUY,6.0);
-		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"JOE",7,BuySellIndictor.SELL,5.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"ALE",5,BuySellIndicator.SELL,7.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"POP",6,BuySellIndicator.BUY,6.0);
+		stockMarketDAOImpl.recordTrade(Calendar.getInstance().getTime(),"JOE",7,BuySellIndicator.SELL,5.0);
 
 		Double gbceASIndex = Double.parseDouble(stockMarketDAOImpl.getASIndex(StockMarketDAOImpl.tradeData));
 

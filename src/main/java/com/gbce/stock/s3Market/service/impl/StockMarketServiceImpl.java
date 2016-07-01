@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gbce.stock.s3Market.dao.StockMarketDAO;
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.model.StockDetails;
 import com.gbce.stock.s3Market.service.StockMarketService;
 
@@ -50,11 +50,11 @@ public class StockMarketServiceImpl implements StockMarketService{
 	 * @author Kirti
 	 * Record Data in File, Change the input data and check the records in File
 	 *  
-	 * @param Date tradeTime, String stockSymbol, Integer quantity, BuySellIndictor buySellIndictor,Double price
+	 * @param Date tradeTime, String stockSymbol, Integer quantity, BuySellIndicator buySellIndictor,Double price
 	 * @return Map<Date, StockDetails>
 	 *
 	 */
-	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndictor buySellIndictor,Double price) {
+	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndicator buySellIndictor,Double price) {
 
 		return stockMarketDAO.recordTrade(tradeTime, stockSymbol, quantity, buySellIndictor, price);		
 	}

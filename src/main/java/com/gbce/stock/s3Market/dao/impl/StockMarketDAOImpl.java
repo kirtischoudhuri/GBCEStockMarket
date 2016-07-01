@@ -13,7 +13,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import com.gbce.stock.s3Market.dao.StockMarketDAO;
-import com.gbce.stock.s3Market.enums.BuySellIndictor;
+import com.gbce.stock.s3Market.enums.BuySellIndicator;
 import com.gbce.stock.s3Market.model.StockDetails;
 import com.gbce.stock.s3Market.persist.RecordInFile;
 import com.gbce.stock.s3Market.utils.StockDetailsUtil;
@@ -64,11 +64,11 @@ public class StockMarketDAOImpl implements StockMarketDAO{
 	 * @author Kirti
 	 * Record Data in File, Change the input data and check the records in File
 	 *  
-	 * @param Date tradeTime, String stockSymbol, Integer quantity, BuySellIndictor buySellIndictor,Double price
+	 * @param Date tradeTime, String stockSymbol, Integer quantity, BuySellIndicator buySellIndictor,Double price
 	 * @return Map<Date, StockDetails>
 	 *
 	 */
-	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndictor buySellIndictor,Double price) {
+	public  Map<Date, StockDetails> recordTrade(Date tradeTime, String stockSymbol, Integer quantity, BuySellIndicator buySellIndictor,Double price) {
 
 		tradeData.put(tradeTime,new StockDetails(tradeTime,stockSymbol,quantity,buySellIndictor,price));
 
@@ -123,7 +123,7 @@ public class StockMarketDAOImpl implements StockMarketDAO{
 		Double totalPriceQuantity = 0.0;
 		String vwsPrice ="0.0";
 
-		Map<Date, StockDetails> last15MinTrades = StockDetailsUtil.getLast15MinTrades(now,tradeData);
+		Map<Date, StockDetails> last15MinTrades = StockDetailsUtil.getLastReqMinTrades(now,tradeData);
 
 		if(!last15MinTrades.isEmpty()){
 		for (StockDetails trade: last15MinTrades.values()) {

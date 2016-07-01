@@ -2,7 +2,6 @@ package com.gbce.stock.s3Market.dao.impl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
@@ -74,10 +73,10 @@ public class StockMarketDAOImpl implements StockMarketDAO{
 
 		switch(buySellIndictor) {
 		case BUY:
-			RecordInFile.tradeDataRecord("At "+tradeTime+" "+quantity+" "+stockSymbol+" Stock(s)brought at price "+price);
+			RecordInFile.tradeDataRecord("At "+tradeTime+" "+quantity+" "+stockSymbol+" Stock(s) brought at price "+price);
 			break;
 		case SELL:
-			RecordInFile.tradeDataRecord("At "+tradeTime+" "+quantity+" "+stockSymbol+" Stock(s)sold at price "+price);
+			RecordInFile.tradeDataRecord("At "+tradeTime+" "+quantity+" "+stockSymbol+" Stock(s) sold at price "+price);
 			break;
 		default:
 			log.debug("No Transaction");
@@ -96,13 +95,13 @@ public class StockMarketDAOImpl implements StockMarketDAO{
 
 
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
 		} finally {		
 			try {
 				if (br != null)br.close();
-			} catch (IOException ex) {
-				ex.printStackTrace();
+			} catch (Exception e) {
+				log.error(e.getMessage(), e);
 			}
 		}
 		return tradeData;		

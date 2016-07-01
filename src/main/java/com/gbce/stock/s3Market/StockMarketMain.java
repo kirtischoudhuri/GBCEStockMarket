@@ -16,9 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
 import com.gbce.stock.s3Market.controller.StockMarketController;
 import com.gbce.stock.s3Market.dao.StockMarketData;
 import com.gbce.stock.s3Market.enums.BuySellIndicator;
+import com.gbce.stock.s3Market.enums.StockInformation;
 import com.gbce.stock.s3Market.model.StockDetails;
 import com.gbce.stock.s3Market.validate.StockMarketValidator;
-import com.gbce.stock.s3Market.validate.StockMarketValidator.StockInformation;
 
 /**
  * Super Simple Stock Market

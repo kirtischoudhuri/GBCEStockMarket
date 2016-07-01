@@ -21,7 +21,15 @@ public class StockMarketController {
 	StockMarketService stockMarketService;
 	
 	private static Log log = LogFactory.getLog(StockMarketController.class);
-
+	/**
+	 * @author Kirti
+	 * Execute all the required operations for a given Stock
+	 * 
+	 * @param  Map<String, StockDetails> stockData,
+			String tradeStock, int tradeQuantity, double tradePrice, BuySellIndicator buySellIndicater
+	 * @return TradeDataRecord.txt
+	 *
+	 */
 	public void executeTrade( Map<String, StockDetails> stockData,
 			String tradeStock, int tradeQuantity, double tradePrice, BuySellIndicator buySellIndicater) {
 		StockDetails stock;
@@ -43,15 +51,15 @@ public class StockMarketController {
 		dividentYeild = stockMarketService.getDividendYield(stockDetails);
 		//Need to handle if DividendYield=Infinity is not acceptable 
 		if (dividentYeild.toString() == "Infinity"){
-			log.debug("Dividend Yeild for Stock :"+tradeStock+" of Price : "+tradePrice+" and Type: "+type+" is : "+dividentYeild+" (may be needed to handle)");
+			log.debug("Dividend Yeild for Stock : "+tradeStock+" of Price : "+tradePrice+" and Type : "+type+" is : "+dividentYeild+" (may be needed to handle)");
 		}else{
-			log.debug("Dividend Yeild for Stock :"+tradeStock+" of Price : "+tradePrice+" and Type: "+type+" is : "+dividentYeild);
+			log.debug("Dividend Yeild for Stock : "+tradeStock+" of Price : "+tradePrice+" and Type : "+type+" is : "+dividentYeild);
 		}
 
 		// Calculate P/E Ratio
 		peRatio = stockMarketService.getPERatio(stockDetails);
 		//Need to handle if P/E Ratio = Infinity is not acceptable
-		log.debug("P/E Ratio for Stock :"+tradeStock+" of Price : "+tradePrice+" and Type: "+type+" is : "+peRatio);
+		log.debug("P/E Ratio for Stock : "+tradeStock+" of Price : "+tradePrice+" and Type: "+type+" is : "+peRatio);
 
 		//As soon as Trading is done call method recordTrade
 		//Record Trade in File
